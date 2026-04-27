@@ -12,9 +12,40 @@
   background-size: 100% 100%;
 }
 
+.hero-nuts-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-nut-anchor {
+  position: absolute;
+}
+
+.hero-nut-anchor--left {
+  left: 17%;
+  bottom: 7%;
+  transform: translateX(-50%);
+}
+
+.hero-nut-anchor--right {
+  right: 17%;
+  bottom: 7%;
+  transform: translateX(50%);
+}
+
+.hero-nut {
+  display: block;
+  width: clamp(40px, 7vw, 92px);
+  height: auto;
+  will-change: transform;
+}
+
 .hero-squirrel-layer {
   position: absolute;
   inset: 0;
+  z-index: 3;
   pointer-events: none;
 }
 
@@ -33,6 +64,20 @@
 }
 
 @media (max-width: 420px) {
+  .hero-nut-anchor--left {
+    left: 12%;
+    bottom: 8%;
+  }
+
+  .hero-nut-anchor--right {
+    right: 12%;
+    bottom: 8%;
+  }
+
+  .hero-nut {
+    width: clamp(32px, 11vw, 68px);
+  }
+
   .hero-squirrel-anchor {
     bottom: 29%;
   }
@@ -54,7 +99,26 @@
     bottom: 20%;
   }
 
-  .hero-squirrel {
-    width: clamp(180px, 19vw, 280px);
+  .hero-nut-anchor--left {
+    left: 18%;
+    bottom: 6%;
   }
+
+  .hero-nut-anchor--right {
+    right: 18%;
+    bottom: 6%;
+  }
+
+  .hero-nut {
+    width: clamp(52px, 6vw, 104px);
+  }
+
+  .hero-squirrel {
+    width: clamp(80px, 48vw, 330px);
+  }
+}
+
+.hero-scroll-continuation {
+  min-height: 130vh;
+  background: linear-gradient(180deg, #06060c 0%, #08080d 45%, #08080d 100%);
 }
