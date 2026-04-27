@@ -18,13 +18,7 @@ export function createStorySection() {
         </p>
         <p class="story-section__highlight">No stress. No pause. Just keep dancing.</p>
 
- <p class="story-section__line story-section__line--space">
-        Contract Address :
-        </p>
-      
-         <p class="story-section__line story-section__line--space">
-         4df1wZoygsynEZ6XmpcoabrVwv7nBgjHLyCns5xApump
-        </p>
+
       
       </div>
     </section>
