@@ -1,0 +1,60 @@
+.hero-page {
+  min-height: 100vh;
+}
+
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-image: url('../assets/belkaherosectionmobile.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.hero-squirrel-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-squirrel-anchor {
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  transform: translateX(-50%);
+}
+
+.hero-squirrel {
+  display: block;
+  width: clamp(190px, 50vw, 310px);
+  height: auto;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 420px) {
+  .hero-squirrel-anchor {
+    bottom: 29%;
+  }
+
+  .hero-squirrel {
+    width: 56vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    background-image: url('../assets/belkaherosection.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .hero-squirrel-anchor {
+    bottom: 20%;
+  }
+
+  .hero-squirrel {
+    width: clamp(180px, 19vw, 280px);
+  }
+}
