@@ -9,13 +9,13 @@ const SOCIAL_LINKS = [
   {
     id: 'twitter',
     label: 'X (Twitter) link',
-    href: 'https://x.com',
+    href: 'https://x.com/belka_sol',
     image: twitterButton,
   },
   {
     id: 'telegram',
     label: 'Telegram link',
-    href: 'https://t.me',
+    href: 'https://t.me/belka_portal',
     image: telegramButton,
   },
   {

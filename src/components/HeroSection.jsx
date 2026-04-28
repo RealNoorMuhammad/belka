@@ -1,5 +1,7 @@
 import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react'
+import { useState } from 'react'
 import heroSquirrel from '../assets/herosquirrel.png'
+import heroSquirrelPressed from '../assets/herosquirrel2.png'
 import nutLeft from '../assets/nutleft.png'
 import nutRight from '../assets/nutright.png'
 import buyButton from '../assets/button.png'
@@ -8,11 +10,12 @@ import heroBottomImage from '../assets/bottom image.png'
 import './HeroSection.css'
 
 const DEX_SCREENER_URL =
-  'https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=4df1wZoygsynEZ6XmpcoabrVwv7nBgjHLyCns5xApump'
+  'https://dexscreener.com/solana/2rmm8boxpamwulwouacxjym5rara5fsugc3fe4k76qj8'
 
 function HeroSection() {
   const { scrollY } = useScroll()
   const reduceMotion = useReducedMotion()
+  const [isSquirrelPressed, setIsSquirrelPressed] = useState(false)
 
   const leftParallax = reduceMotion ? 0 : 0.26
   const rightParallax = reduceMotion ? 0 : 0.34
@@ -34,6 +37,12 @@ function HeroSection() {
               alt=""
               className="hero-nut hero-nut--left"
               style={{ y: nutLeftY, x: nutLeftX }}
+              drag
+              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+              dragElastic={0.5}
+              dragMomentum={false}
+              dragTransition={{ bounceStiffness: 520, bounceDamping: 20 }}
+              whileTap={{ scale: 1.08 }}
             />
           </div>
           <div className="hero-nut-anchor hero-nut-anchor--right">
@@ -42,6 +51,12 @@ function HeroSection() {
               alt=""
               className="hero-nut hero-nut--right"
               style={{ y: nutRightY, x: nutRightX }}
+              drag
+              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+              dragElastic={0.5}
+              dragMomentum={false}
+              dragTransition={{ bounceStiffness: 520, bounceDamping: 20 }}
+              whileTap={{ scale: 1.08 }}
             />
           </div>
         </div>
@@ -76,7 +91,7 @@ function HeroSection() {
         <div className="hero-squirrel-layer" aria-hidden="true">
           <div className="hero-squirrel-anchor">
             <motion.img
-              src={heroSquirrel}
+              src={isSquirrelPressed ? heroSquirrelPressed : heroSquirrel}
               alt=""
               className="hero-squirrel"
               initial={{ y: '-34vh', opacity: 0.2, scale: 0.92 }}
@@ -86,6 +101,10 @@ function HeroSection() {
                 ease: [0.18, 0.85, 0.22, 1],
                 delay: 0.08,
               }}
+              onPointerDown={() => setIsSquirrelPressed(true)}
+              onPointerUp={() => setIsSquirrelPressed(false)}
+              onPointerCancel={() => setIsSquirrelPressed(false)}
+              onPointerLeave={() => setIsSquirrelPressed(false)}
             />
           </div>
         </div>

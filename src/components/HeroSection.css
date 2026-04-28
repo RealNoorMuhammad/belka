@@ -40,6 +40,13 @@
   width: clamp(40px, 7vw, 92px);
   height: auto;
   will-change: transform;
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+}
+
+.hero-nut:active {
+  cursor: grabbing;
 }
 
 .hero-bubble-layer {
@@ -98,6 +105,9 @@
   width: clamp(190px, 50vw, 310px);
   height: auto;
   will-change: transform, opacity;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
 }
 
 @media (max-width: 420px) {
