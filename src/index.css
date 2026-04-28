@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Coffee Soda';
+  src: url('./assets/Coffee Soda.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body,
 #root {
@@ -12,7 +20,7 @@ body,
 }
 
 body {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: 'Coffee Soda', Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   background: #08080d;
 }
 

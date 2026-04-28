@@ -2,7 +2,13 @@ import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react'
 import heroSquirrel from '../assets/herosquirrel.png'
 import nutLeft from '../assets/nutleft.png'
 import nutRight from '../assets/nutright.png'
+import buyButton from '../assets/button.png'
+import bubbleDesktop from '../assets/bubbledesktop.png'
+import heroBottomImage from '../assets/bottom image.png'
 import './HeroSection.css'
+
+const DEX_SCREENER_URL =
+  'https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=4df1wZoygsynEZ6XmpcoabrVwv7nBgjHLyCns5xApump'
 
 function HeroSection() {
   const { scrollY } = useScroll()
@@ -39,6 +45,34 @@ function HeroSection() {
             />
           </div>
         </div>
+        <div className="hero-bubble-layer" aria-hidden="true">
+          <div className="hero-bubble-anchor">
+            <motion.img
+              src={bubbleDesktop}
+              alt=""
+              className="hero-bubble-deco"
+              initial={
+                reduceMotion
+                  ? { scale: 1, opacity: 1, filter: 'blur(0px)' }
+                  : { scale: 1.38, opacity: 0.25, filter: 'blur(10px)' }
+              }
+              animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
+              transition={
+                reduceMotion
+                  ? { duration: 0 }
+                  : {
+                      duration: 1,
+                      delay: 0.18,
+                      ease: [0.22, 1, 0.36, 1],
+                    }
+              }
+              style={{ transformOrigin: '55% 62%' }}
+            />
+          </div>
+        </div>
+        <div className="hero-bottom-art-layer" aria-hidden="true">
+          <img src={heroBottomImage} alt="" className="hero-bottom-art" />
+        </div>
         <div className="hero-squirrel-layer" aria-hidden="true">
           <div className="hero-squirrel-anchor">
             <motion.img
@@ -56,7 +90,14 @@ function HeroSection() {
           </div>
         </div>
       </section>
-      <div className="hero-scroll-continuation" aria-hidden="true" />
+      <a
+        className="hero-buy-button"
+        href={DEX_SCREENER_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={buyButton} alt="Buy $BELKA on Dexscreener" />
+      </a>
     </main>
   )
 }

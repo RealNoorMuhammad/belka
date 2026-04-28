@@ -1,0 +1,59 @@
+.contract-section {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(24px, 6vw, 64px);
+  background: radial-gradient(circle at 50% 25%, #000000 0%, #000000 52%, #000000 100%);
+  color: #f4e7d4;
+}
+
+.contract-content {
+  width: min(1100px, 100%);
+  text-align: center;
+}
+
+.contract-title {
+  margin: 0;
+  font-size: clamp(2rem, 8vw, 6.2rem);
+  font-weight: 900;
+  line-height: 1.04;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.contract-text {
+  margin: clamp(18px, 4vw, 36px) auto 0;
+  font-size: clamp(1rem, 2.2vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.45;
+  max-width: min(100%, 42ch);
+  word-break: break-all;
+  color: #ffd89f;
+  text-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.contract-copy-button {
+  display: block;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.contract-copy-button:hover {
+  filter: brightness(1.12);
+}
+
+.contract-copy-button:focus-visible {
+  outline: 2px solid #ffd89f;
+  outline-offset: 6px;
+  border-radius: 8px;
+}
+
+.contract-copy-hint {
+  margin: 12px 0 0;
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  font-weight: 700;
+  color: #f3d4a6;
+}

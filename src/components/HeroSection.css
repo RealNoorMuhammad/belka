@@ -25,13 +25,13 @@
 
 .hero-nut-anchor--left {
   left: 17%;
-  bottom: 7%;
+  bottom: 11%;
   transform: translateX(-50%);
 }
 
 .hero-nut-anchor--right {
   right: 17%;
-  bottom: 7%;
+  bottom: 11%;
   transform: translateX(50%);
 }
 
@@ -40,6 +40,43 @@
   width: clamp(40px, 7vw, 92px);
   height: auto;
   will-change: transform;
+}
+
+.hero-bubble-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-bubble-anchor {
+  position: absolute;
+  left: 50%;
+  top: calc(8% - 16px);
+  width: max-content;
+  transform: translateX(-50%) rotate(-20deg);
+}
+
+.hero-bubble-deco {
+  display: block;
+  width: clamp(112px, 42vw, 182px);
+  height: auto;
+  will-change: transform, opacity, filter;
+}
+
+.hero-bottom-art-layer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bottom-art {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .hero-squirrel-layer {
@@ -66,12 +103,12 @@
 @media (max-width: 420px) {
   .hero-nut-anchor--left {
     left: 12%;
-    bottom: 8%;
+    bottom: 14%;
   }
 
   .hero-nut-anchor--right {
     right: 12%;
-    bottom: 8%;
+    bottom: 14%;
   }
 
   .hero-nut {
@@ -116,9 +153,57 @@
   .hero-squirrel {
     width: clamp(80px, 48vw, 330px);
   }
+
+  .hero-bubble-anchor {
+    left: 67%;
+    top: calc(45% + 80px);
+    transform: translate(-45%, -50%) rotate(10deg);
+  }
+
+  .hero-bubble-deco {
+    width: clamp(96px, 12vw, 198px);
+  }
 }
 
-.hero-scroll-continuation {
-  min-height: 130vh;
-  background: linear-gradient(180deg, #06060c 0%, #08080d 45%, #08080d 100%);
+.hero-buy-button {
+  position: fixed;
+  left: 50%;
+  bottom: calc(max(0.75rem, env(safe-area-inset-bottom, 0px)) + 28px);
+  transform: translateX(-50%);
+  z-index: 100;
+  display: block;
+  line-height: 0;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 0.22s ease,
+    filter 0.22s ease;
+}
+
+.hero-buy-button:focus-visible {
+  outline: 2px solid #e8c99a;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.hero-buy-button img {
+  display: block;
+  width: clamp(112px, 32vw, 192px);
+  height: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-buy-button:hover {
+    transform: translateX(-50%) translateY(-4px) scale(1.06);
+    filter: brightness(1.08) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-buy-button {
+    bottom: calc(max(1rem, env(safe-area-inset-bottom, 0px)) + 10px);
+  }
+
+  .hero-buy-button img {
+    width: clamp(132px, 13vw, 232px);
+  }
 }

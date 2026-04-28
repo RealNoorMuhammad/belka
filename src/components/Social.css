@@ -1,0 +1,108 @@
+.social-section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(20px, 7vw, 70px);
+  margin-top: -2px;
+  background-color: #4b2f1d;
+  background-image: url('../assets/socials.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  overflow: hidden;
+}
+
+.social-list-wrap {
+  width: min(420px, 92vw);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 2.2vw, 16px);
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 761px) {
+  .social-list-wrap {
+    margin-left: 55px;
+  }
+}
+
+.social-squirrel-wrap {
+  position: absolute;
+  right: 20%;
+  bottom: 6%;
+  z-index: 1;
+  width: max-content;
+  pointer-events: none;
+}
+
+.social-squirrel {
+  display: block;
+  width: clamp(210px, 28vw, 390px);
+  height: auto;
+  pointer-events: auto;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.social-squirrel:active {
+  cursor: grabbing;
+}
+
+.social-button {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  text-decoration: none;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.social-button-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .social-button:hover {
+    transform: translateX(-10px) rotate(-10deg);
+    filter: brightness(1.05);
+  }
+}
+
+@media (max-width: 760px) {
+  .social-section {
+    background-image: url('../assets/socialsmobile.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    align-items: flex-start;
+    padding-top: 17vh;
+    padding-bottom: clamp(18px, 5vh, 42px);
+  }
+
+  .social-list-wrap {
+    width: min(360px, 94vw);
+  }
+
+  .social-button {
+    width: 100%;
+  }
+
+  .social-squirrel-wrap {
+    display: block;
+    right: 50%;
+    bottom: 12%;
+    transform: translateX(50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .social-squirrel {
+    width: clamp(210px, 58vw, 320px);
+  }
+}
