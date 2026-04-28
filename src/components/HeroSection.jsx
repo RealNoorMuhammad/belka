@@ -7,6 +7,7 @@ import nutRight from '../assets/nutright.png'
 import buyButton from '../assets/button.png'
 import bubbleDesktop from '../assets/bubbledesktop.png'
 import heroBottomImage from '../assets/bottom image.png'
+import heroBottomMobileImage from '../assets/bottomheromobileversion.png'
 import './HeroSection.css'
 
 const DEX_SCREENER_URL =
@@ -87,6 +88,9 @@ function HeroSection() {
         </div>
         <div className="hero-bottom-art-layer" aria-hidden="true">
           <img src={heroBottomImage} alt="" className="hero-bottom-art" />
+        </div>
+        <div className="hero-bottom-art-layer-mobile" aria-hidden="true">
+          <img src={heroBottomMobileImage} alt="" className="hero-bottom-art" />
         </div>
         <div className="hero-squirrel-layer" aria-hidden="true">
           <div className="hero-squirrel-anchor">
