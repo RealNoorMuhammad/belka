@@ -80,6 +80,8 @@
     background-position: center top;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     align-items: flex-start;
     padding-top: 17vh;
     padding-bottom: clamp(18px, 5vh, 42px);
